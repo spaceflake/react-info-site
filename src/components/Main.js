@@ -1,4 +1,10 @@
+import ProfileCard from './ProfileCard'
+import { useState } from 'react'
+
 export default function Main() {
+  const [isClicked, setIsClicked] = useState(false)
+  const handleClick = () => setIsClicked(true)
+
   return (
     <main>
       <h1>Fun facts about React</h1>
@@ -16,6 +22,7 @@ export default function Main() {
       >
         Learn React
       </a>
+      {isClicked ? null : <ProfileCard onClick={handleClick} />}
     </main>
   )
 }
